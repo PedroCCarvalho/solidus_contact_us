@@ -1,0 +1,25 @@
+<div class='inner' data-hook='contact_inner'>
+  <% if SolidusContactUs::Config.require_name %>
+    <div class='field' id='contact_name'>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'required' %>
+    </div>
+  <% end %>
+
+  <div class='field field-required' id='contact_email'>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'required email', required: true %>
+  </div>
+
+  <% if SolidusContactUs::Config.require_subject %>
+    <div class='field field-required' id='contact_subject'>
+      <%= f.label :subject %>
+      <%= f.text_field :subject, class: 'required', required: true %>
+    </div>
+  <% end %>
+
+  <div class='field field-required' id='contact_message'>
+    <%= f.label :message %>
+    <%= f.text_area :message, class: 'required', required: true %>
+  </div>
+</div>

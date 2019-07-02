@@ -1,0 +1,32 @@
+<% content_for :sidebar do %>
+  <% if 'products' == @current_controller && @taxon %>
+    <%= render partial: 'spree/shared/filters' %>
+  <% elsif !(@taxonomies.nil?) %>
+    <%= render partial: 'spree/shared/taxonomies' %>
+  <% end %>
+<% end %>
+
+<div class='col-md-6 col-md-offset-3'>
+  <div class='panel panel-default'>
+    <div class='panel-heading'>
+      <h3 class='panel-title'>
+        <%= t('spree.contact_us_title') %>
+      </h3>
+    </div>
+
+    <div class='panel-body'>
+      <%= render 'spree/shared/error_messages', target: @contact %>
+
+      <%= form_for @contact, url: contacts_path, html: { id: 'new_contact_us_contact', novalidate: '' } do |f| %>
+        <fieldset>
+          <div class='inner'>
+            <%= render partial: 'form', locals: { f: f } %>
+          </div>
+
+          <%= f.submit t('spree.submit'), alt: t('spree.submit'),
+            id: 'contact_us_contact_submit', title: t('spree.submit') %>
+        </fieldset>
+      <% end %>
+    </div>
+  </div>
+</div>

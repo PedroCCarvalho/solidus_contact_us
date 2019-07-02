@@ -1,0 +1,4 @@
+<%= @contact.message %>
+
+-------------------------------------
+<%= SolidusContactUs::Config.require_name ? t('spree.sent_by_name', email: @contact.email, name: @contact.name) : t('spree.sent_by_contact_form', email: @contact.email) %>

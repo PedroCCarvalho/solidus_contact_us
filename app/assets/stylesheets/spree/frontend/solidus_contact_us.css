@@ -1,0 +1,9 @@
+#new_contact_us_contact input[type=text],
+#new_contact_us_contact input[type=email],
+#new_contact_us_contact textarea {
+  width: 100%;
+}
+
+#new_contact_us_contact textarea {
+  height: 120px;
+}
